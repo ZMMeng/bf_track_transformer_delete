@@ -81,12 +81,12 @@ public class IpSeekerExt extends IPSeeker {
                     result.setProvince(info.substring(0, 3));
                     if (info.contains("市")) {
                         cityIndex = info.indexOf("市");
-                        result.setCity(info.substring(4, cityIndex + 1));
+                        result.setCity(info.substring(3, cityIndex + 1));
                         return result;
                     }
                     if (info.contains("盟")) {
                         cityIndex = info.indexOf("盟");
-                        result.setCity(info.substring(4, cityIndex + 1));
+                        result.setCity(info.substring(3, cityIndex + 1));
                         return result;
                     }
                 }
@@ -98,19 +98,19 @@ public class IpSeekerExt extends IPSeeker {
                     if (info.contains("市")) {
                         //info格式为xxx(省级行政区)yyy市
                         cityIndex = info.indexOf("市");
-                        result.setCity(info.substring(3, cityIndex + 1));
+                        result.setCity(info.substring(2, cityIndex + 1));
                         return result;
                     }
                     if (info.contains("州")) {
                         //info格式为xxx(省级行政区)yyy州
                         cityIndex = info.indexOf("州");
-                        result.setCity(info.substring(3, cityIndex + 1));
+                        result.setCity(info.substring(2, cityIndex + 1));
                         return result;
                     }
                     if (info.contains("地区")) {
                         //info格式为xxx(省级行政区)yyy地区
                         cityIndex = info.indexOf("地区");
-                        result.setCity(info.substring(3, cityIndex + 2));
+                        result.setCity(info.substring(2, cityIndex + 2));
                         return result;
                     }
                 }
@@ -158,6 +158,15 @@ public class IpSeekerExt extends IPSeeker {
 
         public void setCity(String city) {
             this.city = city;
+        }
+
+        @Override
+        public String toString() {
+            return "RegionInfo{" +
+                    "country='" + country + '\'' +
+                    ", province='" + province + '\'' +
+                    ", city='" + city + '\'' +
+                    '}';
         }
     }
 }

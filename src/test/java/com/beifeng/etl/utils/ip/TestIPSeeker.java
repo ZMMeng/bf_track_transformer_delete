@@ -39,7 +39,7 @@ public class TestIPSeeker {
         ip = "61.188.255.255";//四川省阿坝州
         ip = "14.104.47.220";//重庆市
         ip = "125.72.159.177";//青海省玉树州
-        ip = "3.255.255.255";
+        ip = "3.255.255.255"; //美国
         System.out.println(ipSeeker.getCountry(ip));
     }
 }
